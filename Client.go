@@ -84,7 +84,7 @@ func BuyStocks(line string){
 		output += i.ResponseFields.Name +":"+strconv.Itoa(i.ResponseFields.Number)+":"+"$"+i.ResponseFields.Price+","
 	}
 	output=strings.Trim(output,",")
-	output+="\"\n\"unvestedAmount\":$"+strconv.FormatFloat(float64(jsonMsg.UnvestedAmount),'f',2,32)		
+	output+="\"\n\"unvestedAmount\":"+strconv.FormatFloat(float64(jsonMsg.UnvestedAmount),'f',2,32)		
 	if err!=nil {
 		fmt.Println(err)
 	}else{
@@ -118,8 +118,8 @@ func SeePortfolio(sRequest string){
 			output += i.ResponseFields.Name +":"+strconv.Itoa(i.ResponseFields.Number)+":"+i.ResponseFields.Price+","
 		}
 		output=strings.Trim(output,",")
-		output+="\"\n\"currentMarketValue\":$"+strconv.FormatFloat(float64(jsonMsg2.CurrentMarketValue),'f',-1,32)
-		output+="\n\"unvestedAmount\":$"+strconv.FormatFloat(float64(jsonMsg2.UnvestedAmount),'f',2,32)
+		output+="\"\n\"currentMarketValue\":"+strconv.FormatFloat(float64(jsonMsg2.CurrentMarketValue),'f',-1,32)
+		output+="\n\"unvestedAmount\":"+strconv.FormatFloat(float64(jsonMsg2.UnvestedAmount),'f',2,32)
 		if err!=nil {
 			fmt.Println(err)
 		}else{
