@@ -111,7 +111,7 @@ func SeePortfolio(sRequest string){
 	var reply string
 	err = c.Call("Server.LossOrGain",string(result4),&reply)
 	var output string
-	output = "\"stocks\":"
+	output = "\"stocks\":"+"\""
 	if reply!=""{
 		json.Unmarshal([]byte(reply),&jsonMsg2)
 		for _, i:= range jsonMsg2.Stocks{
